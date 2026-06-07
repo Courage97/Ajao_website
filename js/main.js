@@ -1,3 +1,129 @@
+(function() {
+    var current = 0;
+    var total = 4;
+    var autoTimer = null;
+    var AUTO_INTERVAL = 5000; // 5 seconds per slide
+ 
+    function updateCarousel() {
+      // Slides
+      var slides = document.querySelectorAll('.slide');
+      slides.forEach(function (s, i) {
+        s.classList.toggle('active', i === current);
+        s.classList.toggle('prev-slide', i === (current - 1 + total) % total);
+      });
+ 
+      // Dots
+      var dots = document.querySelectorAll('.dot');
+      dots.forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+ 
+      // Progress bar reset
+      var bar = document.getElementById('progressBar');
+      if (bar) {
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+        setTimeout(function () {
+          bar.style.transition = 'width ' + AUTO_INTERVAL + 'ms linear';
+          bar.style.width = '100%';
+        }, 50);
+      }
+    }
+ 
+    window.changeSlide = function (dir) {
+      current = (current + dir + total) % total;
+      updateCarousel();
+      resetAuto();
+    };
+ 
+    window.goToSlide = function (index) {
+      current = index;
+      updateCarousel();
+      resetAuto();
+    };
+ 
+    function autoPlay() {
+      current = (current + 1) % total;
+      updateCarousel();
+    }
+ 
+    function resetAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(autoPlay, AUTO_INTERVAL);
+    }
+ 
+    // Mobile menu toggle
+    window.toggleMobileMenu = function () {
+      var menu = document.getElementById('mobileMenu');
+      var ham = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+      ham.classList.toggle('open');
+    };
+ 
+    // Quote form submission
+    window.submitQuote = function () {
+      var name = document.getElementById('firstName').value;
+      var phone = document.getElementById('phone').value;
+      var service = document.getElementById('service').value;
+      if (!name || !phone || !service) {
+        alert('Please fill in your name, phone number and service before submitting.');
+        return;
+      }
+      alert('Thank you, ' + name + '! Your quote request has been submitted. We will contact you shortly.');
+    };
+ 
+    // Navbar shadow on scroll
+    window.addEventListener('scroll', function () {
+      var nb = document.getElementById('mainNavbar');
+      if (nb) {
+        nb.classList.toggle('scrolled', window.scrollY > 10);
+      }
+    });
+ 
+    // Touch / swipe support
+    var startX = 0;
+    var track = document.getElementById('carouselTrack');
+    if (track) {
+      track.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+      }, { passive: true });
+      track.addEventListener('touchend', function (e) {
+        var diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 50) changeSlide(diff > 0 ? 1 : -1);
+      }, { passive: true });
+    }
+ 
+    // Init
+    updateCarousel();
+    autoTimer = setInterval(autoPlay, AUTO_INTERVAL);
+  })();
+
+// FAQ toggle
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if (!isOpen) item.classList.add('open');
+}
+
+
+(function(){
+  var cur=0,total=4,timer;
+  function update(){
+    document.getElementById('tTrack').style.transform='translateX(-'+cur*100+'%)';
+    document.getElementById('tCur').textContent=cur+1;
+    document.querySelectorAll('.t-prog-dot').forEach(function(d,i){
+      d.classList.toggle('active',i===cur);
+    });
+  }
+  window.tMove=function(d){cur=(cur+d+total)%total;update();reset()};
+  window.tGo=function(i){cur=i;update();reset()};
+  function reset(){clearInterval(timer);timer=setInterval(function(){cur=(cur+1)%total;update()},6000)}
+  update();reset();
+})();
+
+
+// jQuery code for back-to-top button, dropdown hover, testimonials carousel, gallery filter, and portfolio isotope
 (function ($) {
     "use strict";
     
@@ -53,6 +179,48 @@
             }
         }
     });
+
+// Gallery filter and before-after slider
+(function(){
+  document.querySelectorAll('.gallery-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.gallery-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.ba-reveal').forEach(function(reveal){
+    var isDragging = false;
+
+    function setPos(pct){
+      pct = Math.max(5, Math.min(95, pct));
+      reveal.querySelector('.ba-before-wrap').style.width = pct + '%';
+      reveal.querySelector('.ba-divider').style.left = pct + '%';
+      reveal.querySelector('.ba-handle').style.left = pct + '%';
+    }
+
+    function getPercent(e, touch){
+      var rect = reveal.getBoundingClientRect();
+      var clientX = touch ? e.touches[0].clientX : e.clientX;
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    reveal.addEventListener('mousedown', function(e){ isDragging=true; setPos(getPercent(e,false)); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e){ if(isDragging) setPos(getPercent(e,false)); });
+    window.addEventListener('mouseup', function(){ isDragging=false; });
+
+    reveal.addEventListener('touchstart', function(e){ isDragging=true; setPos(getPercent(e,true)); },{passive:true});
+    reveal.addEventListener('touchmove', function(e){ if(isDragging) setPos(getPercent(e,true)); },{passive:true});
+    reveal.addEventListener('touchend', function(){ isDragging=false; });
+
+    // Intro animation
+    var pct=80;
+    var interval=setInterval(function(){
+      pct-=1.5; setPos(pct);
+      if(pct<=50) clearInterval(interval);
+    },16);
+  });
+})();
     
     
     // Portfolio isotope and filter
@@ -69,4 +237,10 @@
     });
     
 })(jQuery);
+
+
+window.addEventListener('scroll', function(){
+  var btn = document.getElementById('backToTop');
+  btn.classList.toggle('visible', window.scrollY > 300);
+});
 

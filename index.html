@@ -25,743 +25,857 @@
 
     <body>
         <div class="wrapper">
-            <!-- Header Start -->
-            <div class="header home">
-                <div class="container-fluid">
-                    <div class="header-top row align-items-center">
-                        <div class="col-lg-3">
-                            <div class="brand">
-                                <a href="index.html">
-                                    
-                                    <img src="img/logo.png" alt="Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-9">
-                            <div class="topbar">
-                                <div class="topbar-col">
-                                    <a href="tel:+012 345 67890"><i class="fa fa-phone-alt"></i>+234 8037701197</a>
-                                </div>
-                                <div class="topbar-col">
-                                    <a href="mailto:ajaospotlesscleaning@gmail.com"><i class="fa fa-envelope"></i>ajaospotlesscleaning@gmail.com</a>
-                                </div>
-                                <div class="topbar-col">
-                                    <div class="topbar-social">
-                                        <a href=""><i class="fab fa-twitter"></i></a>
-                                        <a href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a href=""><i class="fab fa-youtube"></i></a>
-                                        <a href=""><i class="fab fa-instagram"></i></a>
-                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="navbar navbar-expand-lg bg-light navbar-light">
-                                <a href="#" class="navbar-brand">MENU</a>
-                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-
-                                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                                    <div class="navbar-nav ml-auto">
-                                        <a href="index.html" class="nav-item nav-link active">Home</a>
-                                        <a href="about.html" class="nav-item nav-link">About</a>
-                                        <a href="service.html" class="nav-item nav-link">Service</a>
-                                        <a href="portfolio.html" class="nav-item nav-link">Project</a>
-                                        <a href="single.html" class="nav-item nav-link">Single</a>
-                                        <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                        <div class="nav-item dropdown">
-                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
-                                            <div class="dropdown-menu">
-                                                <a href="#" class="dropdown-item">Sub Item 1</a>
-                                                <a href="#" class="dropdown-item">Sub Item 2</a>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="btn">Get A Quote</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="hero row align-items-center">
-                        <div class="col-md-7">
-                            <h2>Best & Trusted</h2>
-                            <h2><span>Cleaning</span> Service</h2>
-                            <p>Lorem ipsum dolor sit amet elit pretium facilisis ornare</p>
-                            <a class="btn" href="">Explore Now</a>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="form">
-                                <h3>Get A Quote</h3>
-                                <form>
-                                    <input class="form-control" type="text" placeholder="Your Name">
-                                    <input class="form-control" type="text" placeholder="Mobile Number">
-                                    <div class="control-group">
-                                        <select class="custom-select">
-                                            <option selected>Choose a service</option>
-                                            <option value="1">House Cleaning</option>
-                                            <option value="2">Apartment Cleaning</option>
-                                            <option value="3">Office Cleaning</option>
-                                        </select>
-                                    </div>
-                                    <textarea class="form-control" placeholder="Comment"></textarea>
-                                    <button class="btn btn-block">Get A Quote</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+           <!-- ── TOPBAR ── -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-contact">
+      <a href="tel:+2348037701197">
+        <i class="fa fa-phone-alt"></i>
+        <span>+234 803 770 1197</span>
+      </a>
+      <a href="mailto:ajaospotlesscleaning@gmail.com">
+        <i class="fa fa-envelope"></i>
+        <span>ajaospotlesscleaning@gmail.com</span>
+      </a>
+    </div>
+    <div class="topbar-social">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+ 
+<!-- ── STICKY NAVBAR ── -->
+<nav class="navbar" id="mainNavbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-icon"><i class="fa fa-spray-can-sparkles"></i></div>
+      Ajao<span>.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="service.html">Services</a></li>
+      <li><a href="portfolio.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#quote" class="nav-cta">Get A Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="service.html">Services</a>
+    <a href="portfolio.html">Projects</a>
+    <a href="contact.html">Contact</a>
+    <a href="#quote" class="mobile-cta">Get A Quote →</a>
+  </div>
+</nav>
+ 
+<!-- ── HERO CAROUSEL + QUOTE FORM ── -->
+<section class="header home" id="quote">
+  <div class="hero-layout">
+ 
+    <!-- LEFT: Carousel -->
+    <div class="carousel-wrapper">
+ 
+      <!-- Slides -->
+      <div class="carousel-track" id="carouselTrack">
+ 
+        <!-- Slide 1: Home Cleaning -->
+        <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1400&q=80')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">
+              <span class="eyebrow-line"></span>
+              Home Cleaning
             </div>
-            <!-- Header End -->
+            <h2 class="slide-title">
+              A Spotless Home<br>
+              <em>Is a Happy Home</em>
+            </h2>
+            <p class="slide-sub">
+              From deep cleaning to routine maintenance — we transform every corner of your home into a pristine, welcoming space.
+            </p>
+            <div class="slide-actions">
+              <a href="service.html" class="btn-slide-primary">Our Services</a>
+              <a href="#quote" class="btn-slide-ghost">Get A Quote</a>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Slide 2: Laundry & Ironing -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=1400&q=80')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">
+              <span class="eyebrow-line"></span>
+              Laundry &amp; Ironing
+            </div>
+            <h2 class="slide-title">
+              Fresh, Crisp &amp;<br>
+              <em>Perfectly Pressed</em>
+            </h2>
+            <p class="slide-sub">
+              We handle your laundry and ironing with expert care — washed, folded, and returned smelling clean and looking flawless.
+            </p>
+            <div class="slide-actions">
+              <a href="service.html" class="btn-slide-primary">Learn More</a>
+              <a href="#quote" class="btn-slide-ghost">Book Now</a>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Slide 3: Office Cleaning -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">
+              <span class="eyebrow-line"></span>
+              Office Cleaning
+            </div>
+            <h2 class="slide-title">
+              Clean Workspace,<br>
+              <em>Sharper Minds</em>
+            </h2>
+            <p class="slide-sub">
+              A clean office drives productivity. We offer scheduled, after-hours, and deep-clean packages tailored to your business.
+            </p>
+            <div class="slide-actions">
+              <a href="service.html" class="btn-slide-primary">View Packages</a>
+              <a href="#quote" class="btn-slide-ghost">Get A Quote</a>
+            </div>
+          </div>
+        </div>
+ 
+        <!-- Slide 4: Dry Cleaning -->
+        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1400&q=80')">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-eyebrow">
+              <span class="eyebrow-line"></span>
+              Dry Cleaning
+            </div>
+            <h2 class="slide-title">
+              Your Finest Garments,<br>
+              <em>Impeccably Cared For</em>
+            </h2>
+            <p class="slide-sub">
+              Premium dry cleaning for suits, evening wear, and delicate fabrics — handled with precision and returned to perfection.
+            </p>
+            <div class="slide-actions">
+              <a href="service.html" class="btn-slide-primary">Explore Service</a>
+              <a href="#quote" class="btn-slide-ghost">Book Pickup</a>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+      <!-- /carousel-track -->
+ 
+      <!-- Carousel Controls -->
+      <button class="carousel-btn prev" onclick="changeSlide(-1)" aria-label="Previous slide">
+        <i class="fa fa-chevron-left"></i>
+      </button>
+      <button class="carousel-btn next" onclick="changeSlide(1)" aria-label="Next slide">
+        <i class="fa fa-chevron-right"></i>
+      </button>
+ 
+      <!-- Dots -->
+      <div class="carousel-dots" id="carouselDots">
+        <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+        <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+        <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+        <button class="dot" onclick="goToSlide(3)" aria-label="Slide 4"></button>
+      </div>
+ 
+      <!-- Progress bar -->
+      <div class="carousel-progress">
+        <div class="carousel-progress-bar" id="progressBar"></div>
+      </div>
+ 
+    </div>
+    <!-- /carousel-wrapper -->
+ 
+    <!-- RIGHT: Quote Form -->
+    <div class="quote-panel" id="quotePanel">
+      <div class="quote-form">
+        <div class="form-heading">Get A Quote</div>
+        <div class="form-sub">We respond within the hour</div>
+ 
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" placeholder="e.g. Amara"/>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" placeholder="e.g. Okafor"/>
+          </div>
+        </div>
+ 
+        <div class="form-group">
+          <label for="phone">Mobile Number</label>
+          <input type="tel" id="phone" placeholder="+234 800 000 0000"/>
+        </div>
+ 
+        <div class="form-group">
+          <label for="service">Choose a Service</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option value="1">Home Cleaning</option>
+            <option value="2">Office Cleaning</option>
+            <option value="3">Laundry &amp; Ironing</option>
+            <option value="4">Dry Cleaning</option>
+          </select>
+        </div>
+ 
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <textarea id="comment" placeholder="Any special instructions or details..."></textarea>
+        </div>
+ 
+        <button class="btn-submit" type="button" onclick="submitQuote()">
+          Submit Request
+        </button>
+ 
+        <div class="wa-strip">
+          <div class="wa-icon-box"><i class="fab fa-whatsapp"></i></div>
+          <div class="wa-label">
+            Chat on WhatsApp
+            <span>Get an instant quote</span>
+          </div>
+          <button class="wa-btn" onclick="window.open('https://wa.me/2348037701197?text=Hello%2C%20I%20would%20like%20a%20quote','_blank')">
+            Chat Now
+          </button>
+        </div>
+ 
+      </div>
+    </div>
+    <!-- /quote-panel -->
+ 
+  </div>
+</section>
+<!-- Header End -->
             
             
             <!-- About Start -->
             <div class="about">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-5 col-md-6">
-                            <div class="about-img">
-                                <img src="img/about.jpg" alt="Image">
-                            </div>
-                        </div>
-                        <div class="col-lg-7 col-md-6">
-                            <div class="about-text">
-                                <h2><span>10</span> Years Experience</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- About End -->
+  <div class="container">
+    <div class="about-grid">
 
+      <!-- IMAGE -->
+      <div class="about-img-wrap">
+        <div class="about-img">
+          <img src="img/team2.png" alt="Ajao Cleaning Team"/>
+        </div>
+        <div class="exp-badge">
+          <div class="exp-badge-num">40</div>
+          <div class="exp-badge-text">Years of Excellence</div>
+        </div>
+      </div>
 
-            <!-- Service Start -->
-            <div class="service">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Our Services</p>
-                        <h2>Provide Services Worldwide</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-item">
-                                <img src="img/service-1.jpg" alt="Service">
-                                <h3>Flour Cleaning</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-item">
-                                <img src="img/service-2.jpg" alt="Service">
-                                <h3>Glass Cleaning</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-item">
-                                <img src="img/service-3.jpg" alt="Service">
-                                <h3>Carpet Cleaning</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="service-item">
-                                <img src="img/service-4.jpg" alt="Service">
-                                <h3>Toilet Cleaning</h3>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Service End -->
-            
-            
-            <!-- Feature Start -->
-            <div class="feature">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="section-header left">
-                                <p>Why Choose Us</p>
-                                <h2>Expert Cleaners and World Class Services</h2>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
-                            </p>
-                            <a class="btn" href="">Learn More</a>
-                        </div>
-                        <div class="col-md-7">
-                            <div class="row align-items-center feature-item">
-                                <div class="col-5">
-                                    <img src="img/feature-1.jpg" alt="Feature">
-                                </div>
-                                <div class="col-7">
-                                    <h3>Expert Cleaners</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row align-items-center feature-item">
-                                <div class="col-5">
-                                    <img src="img/feature-2.jpg" alt="Feature">
-                                </div>
-                                <div class="col-7">
-                                    <h3>Reasonable Prices</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="row align-items-center feature-item">
-                                <div class="col-5">
-                                    <img src="img/feature-3.jpg" alt="Feature">
-                                </div>
-                                <div class="col-7">
-                                    <h3>Quick & Best Services</h3>
-                                    <p>
-                                        Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Feature End -->
-            
-            
-            <!-- Team Start -->
-            <div class="team">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Team Member</p>
-                        <h2>Meet Our Expert Cleaners</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-item">
-                                <div class="team-img">
-                                    <img src="img/team-1.jpg" alt="Team Image">
-                                </div>
-                                <div class="team-text">
-                                    <h2>Josh Dunn</h2>
-                                    <h3>CEO</h3>
-                                    <div class="team-social">
-                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-item">
-                                <div class="team-img">
-                                    <img src="img/team-2.jpg" alt="Team Image">
-                                </div>
-                                <div class="team-text">
-                                    <h2>Mollie Ross</h2>
-                                    <h3>Team Manager</h3>
-                                    <div class="team-social">
-                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-item">
-                                <div class="team-img">
-                                    <img src="img/team-3.jpg" alt="Team Image">
-                                </div>
-                                <div class="team-text">
-                                    <h2>Dylan Adams</h2>
-                                    <h3>Cleaner</h3>
-                                    <div class="team-social">
-                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6">
-                            <div class="team-item">
-                                <div class="team-img">
-                                    <img src="img/team-4.jpg" alt="Team Image">
-                                </div>
-                                <div class="team-text">
-                                    <h2>Jennifer Page</h2>
-                                    <h3>Cleaner</h3>
-                                    <div class="team-social">
-                                        <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                                        <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                                        <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Team End -->
+      <!-- TEXT -->
+      <div class="about-text">
+        <div class="section-label">About Us</div>
+        <h2 class="about-title">
+          Cleaning &amp; Laundry Done<br>
+          <em>The Right Way</em>
+        </h2>
+        <p class="about-desc">
+          At Ajao Laundry &amp; Cleaning Service, we have spent over four decade delivering premium cleaning solutions to homes, offices, and wardrobes across the city. Our work is defined by attention to detail, trusted professionals, and a genuine commitment to your satisfaction.
+        </p>
+        <p class="about-desc">
+          Whether it's a routine clean, a deep scrub, or the careful handling of your finest garments — we approach every job with the same white-glove standard that has earned us the trust of 1000+ happy clients.
+        </p>
 
+        <div class="about-points">
+          <div class="point-item"><div class="point-icon"><i class="fa fa-check"></i></div>Vetted Professionals</div>
+          <div class="point-item"><div class="point-icon"><i class="fa fa-check"></i></div>Eco-Friendly Products</div>
+          <div class="point-item"><div class="point-icon"><i class="fa fa-check"></i></div>Flexible Scheduling</div>
+          <div class="point-item"><div class="point-icon"><i class="fa fa-check"></i></div>Satisfaction Guaranteed</div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-num">1000+</div>
+            <div class="stat-label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">Satisfaction Rate</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">40yr</div>
+            <div class="stat-label">In Business</div>
+          </div>
+        </div>
+
+        <div class="about-cta">
+          <a class="btn-about" href="about.html">Learn More</a>
+          <a class="wa-call" href="tel:+2348037701197">
+            <div class="wa-call-icon"><i class="fa fa-phone-alt"></i></div>
+            <div class="wa-call-text">
+              +234 803 770 1197
+              <small>Call us anytime</small>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- About End -->
+        
+
+<!-- Service Start -->
+<div class="service">
+  <div class="container">
+
+    <div class="service-header">
+      <div class="service-header-left">
+        <div class="section-label">What We Offer</div>
+        <h2 class="service-title">Our Premium<br><em>Cleaning Services</em></h2>
+      </div>
+      <div class="service-header-right">
+        <a href="service.html" class="btn-all-services">View All Services <i class="fa fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="img/ajao8.png" alt="Home Cleaning"/>
+          <div class="card-num">01</div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa fa-house"></i></div>
+          <h3 class="service-card-name">Home Cleaning</h3>
+          <p class="service-card-desc">Deep cleaning, regular maintenance and move-in/out services — every surface treated with care and professional-grade products.</p>
+          <a href="service.html" class="card-link">Learn More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="img/service-2.jpg" alt="Office Cleaning"/>
+          <div class="card-num">02</div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa fa-building"></i></div>
+          <h3 class="service-card-name">Office Cleaning</h3>
+          <p class="service-card-desc">Scheduled, after-hours or deep-clean packages for offices of all sizes — keeping your workspace sharp and professional.</p>
+          <a href="service.html" class="card-link">Learn More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="img/service-3.jpg" alt="Laundry and Ironing"/>
+          <div class="card-num">03</div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa fa-shirt"></i></div>
+          <h3 class="service-card-name">Laundry &amp; Ironing</h3>
+          <p class="service-card-desc">Wash, fold and press — handled with precision. We treat your garments gently, expertly, and return them on time.</p>
+          <a href="service.html" class="card-link">Learn More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card-img">
+          <img src="img/service-4.jpg" alt="Dry Cleaning"/>
+          <div class="card-num">04</div>
+          <div class="card-accent"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon"><i class="fa fa-vest"></i></div>
+          <h3 class="service-card-name">Dry Cleaning</h3>
+          <p class="service-card-desc">Premium care for suits, evening wear and delicate fabrics — cleaned to impeccable standards and returned to perfection.</p>
+          <a href="service.html" class="card-link">Learn More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="service-bottom">
+      <div class="service-promise">
+        <div class="promise-item"><i class="fa fa-check-circle"></i> Vetted Professionals</div>
+        <div class="promise-item"><i class="fa fa-check-circle"></i> Eco-Friendly Products</div>
+        <div class="promise-item"><i class="fa fa-check-circle"></i> Satisfaction Guaranteed</div>
+        <div class="promise-item"><i class="fa fa-check-circle"></i> Same-Day Availability</div>
+      </div>
+      <div class="service-cta-text">
+        Not sure which service? <a href="contact.html">Talk to us →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Service End -->
+            
 
             <!-- FAQs Start -->
-            <div class="faqs">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="section-header left">
-                                <p>You Might Ask</p>
-                                <h2>Frequently Asked Questions</h2>
-                            </div>
-                            <img src="img/faqs.jpg" alt="Image">
-                        </div>
-                        <div class="col-md-7">
-                            <div id="accordion">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
-                                            <span>1</span> Lorem ipsum dolor sit amet?
-                                        </a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseTwo">
-                                            <span>2</span> Lorem ipsum dolor sit amet?
-                                        </a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseThree">
-                                            <span>3</span> Lorem ipsum dolor sit amet?
-                                        </a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                            <span>4</span> Lorem ipsum dolor sit amet?
-                                        </a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <a class="card-link" data-toggle="collapse" href="#collapseFour">
-                                            <span>5</span> Lorem ipsum dolor sit amet?
-                                        </a>
-                                    </div>
-                                    <div id="collapseFour" class="collapse" data-parent="#accordion">
-                                        <div class="card-body">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non.
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div>
-                            <a class="btn" href="">Ask more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- FAQs End -->
-            
-            
-            <!-- Pricing Plan Start -->
-            <div class="price">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Pricing Plan</p>
-                        <h2>No Extra Hidden Charges</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="price-item">
-                                <div class="price-header">
-                                    <div class="price-icon">
-                                        <i class="fa fa-home"></i>
-                                    </div>
-                                    <div class="price-title">
-                                        <h2>Standard</h2>
-                                    </div>
-                                    <div class="price-pricing">
-                                        <h2><small>$</small>99</h2>
-                                    </div>
-                                </div>
-                                <div class="price-body">
-                                    <div class="price-des">
-                                        <ul>
-                                            <li>3 Bedrooms cleaning</li>
-                                            <li>2 Bathrooms cleaning</li>
-                                            <li>1 Living room Cleaning</li>
-                                            <li>Vacuum Cleaning</li>
-                                            <li>Within 6 Hours</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="price-footer">
-                                    <div class="price-action">
-                                        <a href=""><i class="fa fa-shopping-cart"></i>Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="price-item featured-item">
-                                <div class="price-header">
-                                    <div class="price-icon">
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <div class="price-title">
-                                        <h2>Premium</h2>
-                                    </div>
-                                    <div class="price-pricing">
-                                        <h2><small>$</small>149</h2>
-                                    </div>
-                                </div>
-                                <div class="price-body">
-                                    <div class="price-des">
-                                        <ul>
-                                            <li>5 Bedrooms cleaning</li>
-                                            <li>3 Bathrooms cleaning</li>
-                                            <li>2 Living room Cleaning</li>
-                                            <li>Vacuum Cleaning</li>
-                                            <li>Within 6 Hours</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="price-footer">
-                                    <div class="price-action">
-                                        <a href=""><i class="fa fa-shopping-cart"></i>Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="price-item">
-                                <div class="price-header">
-                                    <div class="price-icon">
-                                        <i class="fa fa-gift"></i>
-                                    </div>
-                                    <div class="price-title">
-                                        <h2>Enterprise</h2>
-                                    </div>
-                                    <div class="price-pricing">
-                                        <h2><small>$</small>199</h2>
-                                    </div>
-                                </div>
-                                <div class="price-body">
-                                    <div class="price-des">
-                                        <ul>
-                                            <li>8 Bedrooms cleaning</li>
-                                            <li>5 Bathrooms cleaning</li>
-                                            <li>3 Living room Cleaning</li>
-                                            <li>Vacuum Cleaning</li>
-                                            <li>Within 12 Hours</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="price-footer">
-                                    <div class="price-action">
-                                        <a href=""><i class="fa fa-shopping-cart"></i>Book Now</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Pricing Plan End -->
-            
-            
-            <!-- Newsletter Start -->
-            <div class="newsletter">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-8">
-                            <h2>Get A Free Quote</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet adipiscing elit
-                            </p>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form">
-                                <input class="form-control" placeholder="Email here">
-                                <button class="btn">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Newsletter End -->
+<div class="faqs">
+  <div class="container">
+    <div class="faqs-grid">
+
+      <!-- LEFT -->
+      <div class="faqs-left">
+        <div class="section-label">You Might Ask</div>
+        <h2 class="faqs-title">Frequently Asked<br><em>Questions</em></h2>
+        <p class="faqs-subtitle">Can't find what you're looking for? Our team is always available to help — reach us by phone or WhatsApp anytime.</p>
+
+        <div class="faqs-img-wrap">
+          <img src="img/faqs.jpg" alt="Ajao Cleaning Team"/>
+        </div>
+
+        <div class="faqs-contact">
+          <div class="faq-contact-icon"><i class="fa fa-phone-alt"></i></div>
+          <div class="faq-contact-text">
+            <strong>Still have questions?</strong>
+            <span>+234 803 770 1197</span>
+          </div>
+          <a href="contact.html" class="faq-contact-link">Contact Us →</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Accordion -->
+      <div class="faqs-right">
+
+        <div class="faq-item open">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">01</span>
+            <span class="faq-q-text">What areas do you currently serve?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>We currently serve clients across Lagos and surrounding areas. Whether it's a home, office, or garment pickup — our team covers a wide radius. Contact us to confirm if we serve your location.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">02</span>
+            <span class="faq-q-text">How do I book a cleaning service?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>Booking is easy — simply fill in the quote form on our homepage, call us directly, or send a WhatsApp message. We'll confirm your booking and assign a professional within the hour.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">03</span>
+            <span class="faq-q-text">Are your cleaning products safe for children and pets?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. We use eco-friendly, non-toxic, and biodegradable cleaning agents that are completely safe for children, pets, and sensitive environments. Your family's safety is our priority.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">04</span>
+            <span class="faq-q-text">Do I need to be home during the cleaning?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>It's entirely your choice. Many of our clients provide access and go about their day. All our professionals are background-checked, vetted, and insured — you can trust them in your space.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">05</span>
+            <span class="faq-q-text">How long does a typical cleaning session take?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>It depends on the size of the space and the type of service. A standard home clean typically takes 2–4 hours. Deep cleans or large offices may take longer. We'll give you a clear timeframe when you book.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span class="faq-num">06</span>
+            <span class="faq-q-text">What is your cancellation or rescheduling policy?</span>
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </button>
+          <div class="faq-answer">
+            <p>We understand plans change. You can cancel or reschedule at no charge with at least 24 hours notice. Just reach us via phone or WhatsApp and we'll sort it out promptly.</p>
+          </div>
+        </div>
+
+        <div class="faqs-ask">
+          <span class="faqs-ask-text">Have a question we haven't answered?</span>
+          <a href="contact.html" class="btn-ask">Ask Us Anything <i class="fa fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FAQs End -->
 
 
             <!-- Testimonial Start -->
-            <div class="testimonial">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Client Review</p>
-                        <h2>Client Says About Service</h2>
-                    </div>
-                    <div class="owl-carousel testimonials-carousel">
-                        <div class="testimonial-item">
-                            <div class="testimonial-img">
-                                <img src="img/testimonial-1.jpg" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                                <h3>Customer Name</h3>
-                                <h4>Profession</h4>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="testimonial-img">
-                                <img src="img/testimonial-2.jpg" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                                <h3>Customer Name</h3>
-                                <h4>Profession</h4>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="testimonial-img">
-                                <img src="img/testimonial-3.jpg" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                                <h3>Customer Name</h3>
-                                <h4>Profession</h4>
-                            </div>
-                        </div>
-                        <div class="testimonial-item">
-                            <div class="testimonial-img">
-                                <img src="img/testimonial-4.jpg" alt="">
-                            </div>
-                            <div class="testimonial-content">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                                <h3>Customer Name</h3>
-                                <h4>Profession</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Testimonial End -->
-            
-            
-            <!-- Call to Action Start -->
-            <div class="call-to-action">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-9">
-                            <h2>Get A Free Cleaning Service</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                            </p>
-                        </div>
-                        <div class="col-md-3">
-                            <a class="btn" href="https://htmlcodex.com/contact">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Call to Action End -->
+<!-- Testimonial Start -->
+<div class="testimonial">
+  <div class="testimonial-bg-quote">"</div>
+  <div class="container">
 
+    <div class="t-section-header">
+      <div class="t-label">Client Reviews</div>
+      <h2 class="t-heading">What Our Clients<br><em>Say About Us</em></h2>
+    </div>
+
+    <div class="t-rating-bar">
+      <div class="t-rating-score">
+        <div class="t-rating-num">4.9</div>
+        <div class="t-rating-outof">/ 5</div>
+      </div>
+      <div class="t-rating-stars">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <div class="t-rating-divider"></div>
+      <div class="t-rating-text">
+        <strong>500+ Happy Clients</strong>
+        Based on 120+ verified reviews
+      </div>
+      <div class="t-rating-divider"></div>
+      <div class="t-rating-text">
+        <strong>Google &nbsp;·&nbsp; Facebook &nbsp;·&nbsp; WhatsApp</strong>
+        Across all platforms
+      </div>
+    </div>
+
+    <div class="t-carousel-wrap">
+      <div class="t-overflow">
+        <div class="t-track" id="tTrack">
+
+          <div class="t-card">
+            <div class="t-card-band">
+              <div class="t-avatar-circle">A</div>
+              <div class="t-band-name">Amara Okonkwo</div>
+              <div class="t-band-role">Homeowner<br>Lekki, Lagos</div>
+              <div class="t-band-tag">Home Cleaning</div>
+            </div>
+            <div class="t-card-body">
+              <div class="t-quote-mark">"</div>
+              <div class="t-stars-row">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p class="t-quote-text">My apartment has never been this spotless. The team arrived on time, worked thoroughly, and left every corner immaculate. I was honestly amazed by how much detail they put into the work. I've already booked them again for next month!</p>
+              <div class="t-quote-service">Home Cleaning Service</div>
+            </div>
+          </div>
+
+          <div class="t-card">
+            <div class="t-card-band">
+              <div class="t-avatar-circle">C</div>
+              <div class="t-band-name">Chidi Eze</div>
+              <div class="t-band-role">Business Owner<br>Victoria Island</div>
+              <div class="t-band-tag">Office Cleaning</div>
+            </div>
+            <div class="t-card-body">
+              <div class="t-quote-mark">"</div>
+              <div class="t-stars-row">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p class="t-quote-text">They handled our entire office deep clean the night before a major client presentation. The professionalism and attention to detail was outstanding. Our office looked brand new the next morning. Every business needs this service!</p>
+              <div class="t-quote-service">Office Cleaning Service</div>
+            </div>
+          </div>
+
+          <div class="t-card">
+            <div class="t-card-band">
+              <div class="t-avatar-circle">F</div>
+              <div class="t-band-name">Fatima Abdullahi</div>
+              <div class="t-band-role">Event Planner<br>Ikeja, Lagos</div>
+              <div class="t-band-tag">Dry Cleaning</div>
+            </div>
+            <div class="t-card-body">
+              <div class="t-quote-mark">"</div>
+              <div class="t-stars-row">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star-half-alt"></i>
+              </div>
+              <p class="t-quote-text">I sent my wedding dress and three suits for dry cleaning before a major event. Everything came back perfectly pressed, fresh, and handled with obvious care. The pickup and delivery was seamless. Ajao is now my permanent go-to for all formal wear.</p>
+              <div class="t-quote-service">Dry Cleaning Service</div>
+            </div>
+          </div>
+
+          <div class="t-card">
+            <div class="t-card-band">
+              <div class="t-avatar-circle">B</div>
+              <div class="t-band-name">Babatunde Adeyemi</div>
+              <div class="t-band-role">Finance Executive<br>Lagos Island</div>
+              <div class="t-band-tag">Laundry & Ironing</div>
+            </div>
+            <div class="t-card-body">
+              <div class="t-quote-mark">"</div>
+              <div class="t-stars-row">
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p class="t-quote-text">The laundry and ironing service is honestly a lifesaver for my schedule. Everything is returned neatly folded, perfectly pressed, and smelling incredibly fresh. As a busy professional, this service saves me hours every single week. Cannot recommend enough.</p>
+              <div class="t-quote-service">Laundry & Ironing Service</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="t-controls">
+        <button class="t-btn" onclick="tMove(-1)"><i class="fa fa-arrow-left"></i></button>
+        <div class="t-progress" id="tDots">
+          <button class="t-prog-dot active" onclick="tGo(0)"></button>
+          <button class="t-prog-dot" onclick="tGo(1)"></button>
+          <button class="t-prog-dot" onclick="tGo(2)"></button>
+          <button class="t-prog-dot" onclick="tGo(3)"></button>
+        </div>
+        <div class="t-counter"><span id="tCur">1</span> / 4</div>
+        <button class="t-btn" onclick="tMove(1)"><i class="fa fa-arrow-right"></i></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Testimonial End -->
+
+            
 
             <!-- Blog Start -->
-            <div class="blog">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Latest From Blog</p>
-                        <h2>Stay Updated From Our Blog</h2>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6">
-                            <div class="blog-item">
-                                <img src="img/blog-1.jpg" alt="Blog">
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="meta">
-                                    <i class="fa fa-list-alt"></i>
-                                    <a href="">Flour Cleaning</a>
-                                    <i class="fa fa-calendar-alt"></i>
-                                    <p>11-Jun-20</p>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="blog-item">
-                                <img src="img/blog-2.jpg" alt="Blog">
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="meta">
-                                    <i class="fa fa-list-alt"></i>
-                                    <a href="">Glass Cleaning</a>
-                                    <i class="fa fa-calendar-alt"></i>
-                                    <p>11-Jun-20</p>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="blog-item">
-                                <img src="img/blog-3.jpg" alt="Blog">
-                                <h3>Lorem ipsum dolor</h3>
-                                <div class="meta">
-                                    <i class="fa fa-list-alt"></i>
-                                    <a href="">Carpet Cleaning</a>
-                                    <i class="fa fa-calendar-alt"></i>
-                                    <p>11-Jun-20</p>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida condimentum
-                                </p>
-                                <a class="btn" href="">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Blog End -->
+            <!-- Gallery Start -->
+<div class="gallery">
+  <div class="container">
+
+    <div class="gallery-header">
+      <div class="gallery-header-left">
+        <div class="section-label">Our Results</div>
+        <h2 class="gallery-title">Before &amp; After<br><em>Transformations</em></h2>
+        <p class="gallery-subtitle">Drag the slider on each image to reveal the transformation. Real results from real jobs — no filters, no tricks.</p>
+      </div>
+      <div class="gallery-header-right">
+        <button class="gallery-filter-btn active">All</button>
+        <button class="gallery-filter-btn">Cleaning</button>
+        <button class="gallery-filter-btn">Laundry</button>
+      </div>
+    </div>
+
+    <div class="gallery-hint">
+      <i class="fa fa-arrows-left-right"></i>
+      Drag the slider left or right to compare before &amp; after
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- Card 1 -->
+      <div class="ba-card">
+        <div class="ba-reveal">
+          <img class="ba-after" src="img/living-room-after.jpg" alt="After — Clean Living Room"/>
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="img/living-room-before.jpg" alt="Before — Dirty Living Room"/>
+          </div>
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+          <div class="ba-divider"></div>
+          <div class="ba-handle">
+            <i class="fa fa-chevron-left"></i>
+            <i class="fa fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="ba-footer">
+          <div class="ba-footer-info">
+            <div class="ba-service-name">Living Room Deep Clean</div>
+            <div class="ba-service-detail">Full surface clean · 3 hrs</div>
+          </div>
+          <div class="ba-footer-tag">Home Cleaning</div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="ba-card">
+        <div class="ba-reveal">
+          <img class="ba-after" src="img/office-after.jpg" alt="After — Clean Office"/>
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="img/office-before.jpg" alt="Before — Messy Office"/>
+          </div>
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+          <div class="ba-divider"></div>
+          <div class="ba-handle">
+            <i class="fa fa-chevron-left"></i>
+            <i class="fa fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="ba-footer">
+          <div class="ba-footer-info">
+            <div class="ba-service-name">Office Sanitisation</div>
+            <div class="ba-service-detail">Full office clean · 5 hrs</div>
+          </div>
+          <div class="ba-footer-tag">Office Cleaning</div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="ba-card">
+        <div class="ba-reveal">
+          <img class="ba-after" src="img/garment-after.jpg" alt="After — Pressed Clothes"/>
+          <div class="ba-before-wrap">
+            <img class="ba-before" src="img/garment-before.jpg" alt="Before — Wrinkled Clothes"/>
+          </div>
+          <span class="ba-label ba-label-before">Before</span>
+          <span class="ba-label ba-label-after">After</span>
+          <div class="ba-divider"></div>
+          <div class="ba-handle">
+            <i class="fa fa-chevron-left"></i>
+            <i class="fa fa-chevron-right"></i>
+          </div>
+        </div>
+        <div class="ba-footer">
+          <div class="ba-footer-info">
+            <div class="ba-service-name">Garment Press &amp; Fold</div>
+            <div class="ba-service-detail">Laundry + ironing · same day</div>
+          </div>
+          <div class="ba-footer-tag">Laundry &amp; Ironing</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="gallery-cta">
+      <span class="gallery-cta-text">Ready to see these results in your own space?</span>
+      <a href="#quote" class="btn-gallery-cta">Book a Service <i class="fa fa-arrow-right"></i></a>
+    </div>
+
+  </div>
+</div>
+<!-- Gallery End -->
 
 
             <!-- Footer Start -->
-            <div class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="footer-contact">
-                                <h2>Get In Touch</h2>
-                                <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                                <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                                <p><i class="fa fa-envelope"></i>info@example.com</p>
-                                <div class="footer-social">
-                                    <a href=""><i class="fab fa-twitter"></i></a>
-                                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a href=""><i class="fab fa-youtube"></i></a>
-                                    <a href=""><i class="fab fa-instagram"></i></a>
-                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="footer-link">
-                                <h2>Useful Link</h2>
-                                <a href="">About Us</a>
-                                <a href="">Our Story</a>
-                                <a href="">Our Services</a>
-                                <a href="">Our Projects</a>
-                                <a href="">Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="footer-link">
-                                <h2>Useful Link</h2>
-                                <a href="">Our Clients</a>
-                                <a href="">Clients Review</a>
-                                <a href="">Ongoing Project</a>
-                                <a href="">Customer Support</a>
-                                <a href="">FAQs</a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3">
-                            <div class="footer-form">
-                                <h2>Stay Updated</h2>
-                                <p>
-                                    Lorem ipsum dolor sit amet, adipiscing elit. Etiam accumsan lacus eget velit
-                                </p>
-                                <input class="form-control" placeholder="Email here">
-                                <button class="btn">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container footer-menu">
-                    <div class="f-menu">
-                        <a href="">Terms of use</a>
-                        <a href="">Privacy policy</a>
-                        <a href="">Cookies</a>
-                        <a href="">Help & FQAs</a>
-                        <a href="">Contact us</a>
-                    </div>
-                </div>
-                <div class="container copyright">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>&copy; <a href="https://htmlcodex.com">HTML Codex</a>, All Right Reserved.</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
-            
-            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-main">
+
+      <!-- Col 1: Brand + Contact -->
+      <div class="footer-brand-col">
+        <a href="index.html" class="footer-logo">
+          <div class="footer-logo-icon"><i class="fa fa-spray-can-sparkles"></i></div>
+          Ajao<span>.</span>
+        </a>
+        <p class="footer-tagline">Premium cleaning and laundry services you can trust — delivered with professionalism and care, every time.</p>
+
+        <div class="footer-contact-list">
+          <a href="#"><i class="fa fa-map-marker-alt"></i>Lagos, Nigeria</a>
+          <a href="tel:+2348037701197"><i class="fa fa-phone-alt"></i>+234 803 770 1197</a>
+          <a href="mailto:ajaospotlesscleaning@gmail.com"><i class="fa fa-envelope"></i>ajaospotlesscleaning@gmail.com</a>
         </div>
+
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Company -->
+      <div class="footer-links-col">
+        <h3 class="footer-col-title">Company</h3>
+        <div class="footer-link-list">
+          <a href="about.html">About Us</a>
+          <a href="about.html">Our Story</a>
+          <a href="service.html">Our Services</a>
+          <a href="portfolio.html">Our Projects</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Support -->
+      <div class="footer-links-col">
+        <h3 class="footer-col-title">Support</h3>
+        <div class="footer-link-list">
+          <a href="#">Our Clients</a>
+          <a href="#">Client Reviews</a>
+          <a href="#">Ongoing Projects</a>
+          <a href="contact.html">Customer Support</a>
+          <a href="#">FAQs</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Newsletter -->
+      <div class="footer-newsletter-col">
+        <h3 class="footer-col-title">Stay Updated</h3>
+        <p class="footer-newsletter-text">Subscribe for cleaning tips, special offers, and service updates delivered straight to your inbox.</p>
+
+        <div class="newsletter-form">
+          <div class="newsletter-input-wrap">
+            <input class="newsletter-input" type="email" placeholder="Your email address"/>
+            <button class="newsletter-btn">Subscribe</button>
+          </div>
+          <p class="newsletter-note"><i class="fa fa-lock"></i>No spam. Unsubscribe anytime.</p>
+        </div>
+
+        <div class="footer-wa">
+          <i class="fab fa-whatsapp"></i>
+          <div class="footer-wa-text">
+            <strong>Chat on WhatsApp</strong>
+            Quick quote or enquiry
+          </div>
+          <button class="footer-wa-btn" onclick="window.open('https://wa.me/2348037701197?text=Hello%2C%20I%20need%20a%20quote','_blank')">Chat Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Middle menu bar -->
+    <div class="footer-menu-bar">
+      <a href="#">Terms of Use</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Cookies</a>
+      <a href="#">Help &amp; FAQs</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <p>&copy; <script>document.write(new Date().getFullYear())</script> <a href="index.html">Ajao Laundry &amp; Cleaning Service</a>. All Rights Reserved.</p>
+      <p class="designed-by">Designed by <a href="#" target="_blank">Courage World Innovation</a></p>
+    </div>
+
+  </div>
+</footer>
+<!-- Footer End -->
+
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">
+  <i class="fa fa-chevron-up"></i>
+</a>
+
+</div>
 
         <!-- JavaScript Libraries -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
