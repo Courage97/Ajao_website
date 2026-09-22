@@ -108,9 +108,11 @@ function toggleFaq(btn) {
 
 
 (function(){
+  var trackEl = document.getElementById('tTrack');
+  if (!trackEl) return;
   var cur=0,total=4,timer;
   function update(){
-    document.getElementById('tTrack').style.transform='translateX(-'+cur*100+'%)';
+    trackEl.style.transform='translateX(-'+cur*100+'%)';
     document.getElementById('tCur').textContent=cur+1;
     document.querySelectorAll('.t-prog-dot').forEach(function(d,i){
       d.classList.toggle('active',i===cur);
@@ -123,10 +125,60 @@ function toggleFaq(btn) {
 })();
 
 
-// jQuery code for back-to-top button, dropdown hover, testimonials carousel, gallery filter, and portfolio isotope
-(function ($) {
+// Gallery filter and before-after slider (vanilla JS — runs on any page)
+(function(){
+  document.querySelectorAll('.gallery-filter-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.gallery-filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.ba-reveal').forEach(function(reveal){
+    var isDragging = false;
+
+    function setPos(pct){
+      pct = Math.max(5, Math.min(95, pct));
+      // clip-path (not width) keeps .ba-before-wrap full-size so the image
+      // inside it never stretches as the reveal fraction changes.
+      reveal.querySelector('.ba-before-wrap').style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      reveal.querySelector('.ba-divider').style.left = pct + '%';
+      reveal.querySelector('.ba-handle').style.left = pct + '%';
+    }
+
+    function getPercent(e, touch){
+      var rect = reveal.getBoundingClientRect();
+      var clientX = touch ? e.touches[0].clientX : e.clientX;
+      return ((clientX - rect.left) / rect.width) * 100;
+    }
+
+    reveal.addEventListener('mousedown', function(e){ isDragging=true; setPos(getPercent(e,false)); e.preventDefault(); });
+    window.addEventListener('mousemove', function(e){ if(isDragging) setPos(getPercent(e,false)); });
+    window.addEventListener('mouseup', function(){ isDragging=false; });
+
+    reveal.addEventListener('touchstart', function(e){ isDragging=true; setPos(getPercent(e,true)); },{passive:true});
+    reveal.addEventListener('touchmove', function(e){ if(isDragging) setPos(getPercent(e,true)); },{passive:true});
+    reveal.addEventListener('touchend', function(){ isDragging=false; });
+
+    // Intro animation
+    var pct=80;
+    var interval=setInterval(function(){
+      pct-=1.5; setPos(pct);
+      if(pct<=50) clearInterval(interval);
+    },16);
+  });
+})();
+
+
+// jQuery-dependent code for back-to-top fade, dropdown hover, and
+// portfolio isotope/owlCarousel — only present on the legacy Bootstrap
+// pages (service/portfolio/contact/single) that still load jQuery.
+// Guarded so it never runs (and never throws) on the vanilla pages
+// (index.html, about.html), which don't load jQuery.
+if (window.jQuery) {
+  (function ($) {
     "use strict";
-    
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
@@ -139,8 +191,8 @@ function toggleFaq(btn) {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
     });
-    
-    
+
+
     // Dropdown on mouse hover
     $(document).ready(function () {
         function toggleNavbarMethod() {
@@ -180,49 +232,7 @@ function toggleFaq(btn) {
         }
     });
 
-// Gallery filter and before-after slider
-(function(){
-  document.querySelectorAll('.gallery-filter-btn').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('.gallery-filter-btn').forEach(function(b){ b.classList.remove('active'); });
-      btn.classList.add('active');
-    });
-  });
 
-  document.querySelectorAll('.ba-reveal').forEach(function(reveal){
-    var isDragging = false;
-
-    function setPos(pct){
-      pct = Math.max(5, Math.min(95, pct));
-      reveal.querySelector('.ba-before-wrap').style.width = pct + '%';
-      reveal.querySelector('.ba-divider').style.left = pct + '%';
-      reveal.querySelector('.ba-handle').style.left = pct + '%';
-    }
-
-    function getPercent(e, touch){
-      var rect = reveal.getBoundingClientRect();
-      var clientX = touch ? e.touches[0].clientX : e.clientX;
-      return ((clientX - rect.left) / rect.width) * 100;
-    }
-
-    reveal.addEventListener('mousedown', function(e){ isDragging=true; setPos(getPercent(e,false)); e.preventDefault(); });
-    window.addEventListener('mousemove', function(e){ if(isDragging) setPos(getPercent(e,false)); });
-    window.addEventListener('mouseup', function(){ isDragging=false; });
-
-    reveal.addEventListener('touchstart', function(e){ isDragging=true; setPos(getPercent(e,true)); },{passive:true});
-    reveal.addEventListener('touchmove', function(e){ if(isDragging) setPos(getPercent(e,true)); },{passive:true});
-    reveal.addEventListener('touchend', function(){ isDragging=false; });
-
-    // Intro animation
-    var pct=80;
-    var interval=setInterval(function(){
-      pct-=1.5; setPos(pct);
-      if(pct<=50) clearInterval(interval);
-    },16);
-  });
-})();
-    
-    
     // Portfolio isotope and filter
     var portfolioIsotope = $('.portfolio-container').isotope({
         itemSelector: '.portfolio-item',
@@ -235,12 +245,59 @@ function toggleFaq(btn) {
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
-    
-})(jQuery);
+
+  })(jQuery);
+}
 
 
 window.addEventListener('scroll', function(){
   var btn = document.getElementById('backToTop');
-  btn.classList.toggle('visible', window.scrollY > 300);
+  if (btn) btn.classList.toggle('visible', window.scrollY > 300);
 });
+
+
+// Contact form submission (no backend wired up yet — see the HTML comment
+// above the form in contact.html). Mirrors the homepage quote form's
+// placeholder pattern: prevent the real navigation to action="#" and just
+// confirm client-side instead.
+(function () {
+  var form = document.querySelector('.contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name');
+    var label = name && name.value ? ', ' + name.value : '';
+    alert('Thank you' + label + '! Your message has been received. We will get back to you shortly.');
+    form.reset();
+  });
+})();
+
+
+// Scroll-reveal fade-up animation for section headings, cards and stat blocks
+(function(){
+  var targets = document.querySelectorAll(
+    '.about-title, .ah-title, .track-record-title, .why-choose-title, ' +
+    '.service-title, .faqs-title, .t-heading, .gallery-title, .locations-title, ' +
+    '.contact-hero-title, .track-card, .why-card, .service-card, .location-card, .ba-card, ' +
+    '.contact-quick-link, .contact-form-wrap, ' +
+    '.stat-item, .ah-stat, .point-item'
+  );
+  if (!targets.length || !('IntersectionObserver' in window)) return;
+
+  targets.forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (i % 4) * 90 + 'ms';
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(function (el) { observer.observe(el); });
+})();
 
