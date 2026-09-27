@@ -278,8 +278,9 @@ window.addEventListener('scroll', function(){
   var targets = document.querySelectorAll(
     '.about-title, .ah-title, .track-record-title, .why-choose-title, ' +
     '.service-title, .faqs-title, .t-heading, .gallery-title, .locations-title, ' +
-    '.contact-hero-title, .track-card, .why-card, .service-card, .location-card, .ba-card, ' +
-    '.contact-quick-link, .contact-form-wrap, ' +
+    '.contact-hero-title, .services-hero-title, .service-accordion-title, .portfolio-hero-title, .projects-glance-title, ' +
+    '.track-card, .why-card, .service-card, .location-card, .ba-card, .service-index-card, .glance-card, ' +
+    '.contact-quick-link, .contact-form-wrap, .accordion-header, .project-title, .project-media, ' +
     '.stat-item, .ah-stat, .point-item'
   );
   if (!targets.length || !('IntersectionObserver' in window)) return;
@@ -300,4 +301,43 @@ window.addEventListener('scroll', function(){
 
   targets.forEach(function (el) { observer.observe(el); });
 })();
+
+
+// Service category accordion + index-grid scroll/expand (service.html only —
+// no-ops on other pages since these selectors match nothing there)
+document.addEventListener('DOMContentLoaded', function () {
+    var accordionItems = document.querySelectorAll('.accordion-item');
+
+    function closeAllAccordions() {
+        accordionItems.forEach(function (item) {
+            item.classList.remove('active');
+        });
+    }
+
+    accordionItems.forEach(function (item) {
+        var header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', function () {
+                var isActive = item.classList.contains('active');
+                closeAllAccordions();
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
+    var indexCards = document.querySelectorAll('.service-index-card');
+    indexCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            var targetId = card.getAttribute('data-target');
+            var targetItem = document.getElementById(targetId);
+            if (targetItem) {
+                closeAllAccordions();
+                targetItem.classList.add('active');
+                targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+});
 
